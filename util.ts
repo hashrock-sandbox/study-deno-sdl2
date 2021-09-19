@@ -60,4 +60,18 @@ export class Sprite {
     this.x += this.vx;
     this.y += this.vy;
   }
+
+  wrap(width: number, height: number) {
+    if (this.x < 0) {
+      this.x += width;
+    } else if (this.x > width) {
+      this.x -= width;
+    }
+
+    if (this.y < 0) {
+      this.y += height;
+    } else if (this.y > height) {
+      this.y -= height;
+    }
+  }
 }

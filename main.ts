@@ -58,25 +58,26 @@ function frame() {
     deno.tick();
     deno.draw(canv);
 
-    const spriteSize = 16 * 4;
-    if (deno.x > 400 + spriteSize / 2) {
-      deno.x = -spriteSize / 2;
-    }
-    if (deno.x < -spriteSize / 2) {
-      deno.x = 400 + spriteSize / 2;
-    }
-    if (deno.y > 400 + spriteSize / 2) {
-      deno.y = -spriteSize / 2;
-    }
-    if (deno.y < -spriteSize / 2) {
-      deno.y = 400 + spriteSize / 2;
-    }
+    deno.wrap(canvasSize.width, canvasSize.height);
 
+    // make deno jump
     deno.z = Math.abs(Math.sin(cnt / 10) * 16) | 0;
 
-    if (deno.vx > 0) {
-      deno.index = 2;
+    if((cnt / 20 | 0) % 2 === 0) {
+      if (deno.vx > 0) {
+        deno.index = 2;
+      } else {
+        deno.index = 0;
+      }
+    }else{
+      if (deno.vx > 0) {
+        deno.index = 3;
+      } else {
+        deno.index = 1;
+      }
+
     }
+
     cnt++;
   }
 
