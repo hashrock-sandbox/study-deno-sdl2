@@ -40,7 +40,7 @@ function checkCollision(
   return !(x2 > w1 + x1 || x1 > w2 + x2 || y2 > h1 + y1 || y1 > h2 + y2);
 }
 
-async function frame() {
+function frame() {
   canvas.setDrawColor(0, 0, 0, 255);
   canvas.clear();
 
