@@ -1,4 +1,4 @@
-import { Canvas, Rect } from "https://deno.land/x/sdl2/src/canvas.ts";
+import { Canvas, Rect } from "https://deno.land/x/sdl2@0.1-alpha.6/src/canvas.ts";
 
 export function drawMap(
   texture: number,
