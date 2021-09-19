@@ -3,7 +3,7 @@ import { drawMap, Sprite } from "./util.ts";
 
 const canvasSize = { width: 400, height: 400 };
 
-const canv = new Canvas({ title: "Hello, Deno!", ...canvasSize });
+const canv = new Canvas({ title: "Deno run!", ...canvasSize });
 
 const surface = canv.loadSurface("./sprite.png");
 const texture = canv.createTextureFromSurface(surface);
